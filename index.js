@@ -2,7 +2,7 @@ const http = require('http')
 const querystring = require('querystring')
 
 const port = process.argv[2]
-const servers = []
+const servers = {}
 const contentType = {'Content-Type': 'text/plain'}
 
 const requestHandler = (request, response) => {
@@ -23,11 +23,10 @@ const updateHandler = (request, response) => {
         if (params['name']) {
             const ip = request.connection.remoteAddress
             console.log(`ip: ${ip}, name: ${params['name']}`)
-            servers.push({
-                name: params['name'],
+            servers[params['name']] = {
                 ip: ip,
                 updatedAt: new Date()
-            })
+            }
         } else {
             console.log(`Ignoring request ${body}`)
         }

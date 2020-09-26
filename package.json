@@ -1,0 +1,8 @@
+{
+  "name": "iamalive",
+  "version": "1.0.0",
+  "description": "A simple server to keep track of my raspberries on the network",
+  "main": "index.js",
+  "author": "era",
+  "license": "GPL-3.0-or-later"
+}
